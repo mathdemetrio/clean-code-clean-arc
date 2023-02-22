@@ -52,3 +52,11 @@ test("Deve criar um pedido com 3 itens, sendo um em dolar", function () {
   order.addItem(new Product(3, 'C', 30, 10, 10, 10, 0.9, 'BRL'), 3);
   expect(order.getTotal()).toBe(16090);
 });
+
+test("Deve criar o pedido e gerar o código", function () {
+  const uuid = crypto.randomUUID();
+  const cpf = "407.302.170-27";
+  const currencyTable = new CurrencyTable();
+  const order = new Order(uuid, cpf, currencyTable, 1, new Date("2023-10-01T10:00:00"));
+  expect(order.getCode()).toBe("202300000001");
+});

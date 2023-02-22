@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:api": "nodemon ./src/api.ts",
+    "start:api-currency": "nodemon ./src/api_currency.ts",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
